@@ -6,7 +6,7 @@
 - Norbey Danilo Muñoz Cañón 20151020050
 
 # Descripción:
-Repositorio donde se realiza un generación de código sql para una base de datos de un mundial.
+Repositorio donde se realiza una generación de código sql para una base de datos de un mundial.
 
 # Nota:
 - Instalar Jinja2 y textX
