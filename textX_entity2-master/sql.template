@@ -1,0 +1,23 @@
+CREATE TABLE {{entity.name}}(
+			{{entity.properties[0].name}} {{entity.properties[0].type.name}} NOT NULL,
+        {% for property in entity.properties[1:8] %}
+            {{property.name}} {{property.type.name}},
+        {% endfor %}
+            CONSTRAINT PK_{{entity.name}} PRIMARY KEY ({{entity.properties[0].name}})
+);
+
+{% for item in range(64) %}
+{% if item+1 <= 48 %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Grupos',NULL,NULL,NULL,NULL);
+{% elif item+1 > 48 and item+1 <= 56 %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Octavos',NULL,NULL,NULL,NULL);
+{% elif item+1 > 56 and item+1 <= 60 %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Cuartos',NULL,NULL,NULL,NULL);
+{% elif item+1 > 60 and item+1 <= 62 %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Semifinal',NULL,NULL,NULL,NULL);
+{% elif item+1 > 62 and item+1 <= 63 %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Tercer Puesto',NULL,NULL,NULL,NULL);
+{% else %}
+INSERT INTO {{entity.name}} VALUES ('{{item+1}}',TO_DATE('SYSDATE','DD-MM-YYYY'),'{{(item%5)+1}}','Final',NULL,NULL,NULL,NULL);
+{% endif %}
+{% endfor %}
