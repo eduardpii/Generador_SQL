@@ -54,7 +54,7 @@ def main(debug=False):
     metamodel_export(entity_mm, join(dot_folder, 'entity_meta.dot'))
 
     # Build Person model from person.ent file
-    person_model = entity_mm.model_from_file(join(this_folder, 'PROGRAMACION.ent'))
+    person_model = entity_mm.model_from_file(join(this_folder, 'SQL.ent'))
 
     # Export to .dot file for visualization
     model_export(person_model, join(dot_folder, 'person.dot'))
