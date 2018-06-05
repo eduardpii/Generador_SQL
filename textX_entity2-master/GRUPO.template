@@ -1,7 +1,8 @@
 CREATE TABLE {{entity.name}}(
-		{{entity.properties[0].name}} {{entity.properties[0].type.name}} NOT NULL,
-        CONSTRAINT PK_{{entity.name}} PRIMARY KEY ({{entity.properties[0].name}})
+	{{entity.properties[0].name}} {{entity.properties[0].type.name}} NOT NULL,
+	CONSTRAINT PK_{{entity.name}} PRIMARY KEY ({{entity.properties[0].name}})
 );
+
 {% set letras = ['A','B','C','D','E','F','G','H'] %}
 {% for item in range(8) %}
 		INSERT INTO {{entity.name}} VALUES ('{{letras[item]}}','Grupo {{item+1}}');
