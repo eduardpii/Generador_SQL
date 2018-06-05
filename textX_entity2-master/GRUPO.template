@@ -5,5 +5,5 @@ CREATE TABLE {{entity.name}}(
 
 {% set letras = ['A','B','C','D','E','F','G','H'] %}
 {% for item in range(8) %}
-		INSERT INTO {{entity.name}} VALUES ('{{letras[item]}}','Grupo {{item+1}}');
+INSERT INTO {{entity.name}} VALUES ('{{letras[item]}}','Grupo {{item+1}}');
 {% endfor %}
