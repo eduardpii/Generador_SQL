@@ -1,11 +1,1 @@
-CREATE TABLE {{entity.name}}(
-  {{entity.properties[0].name}} {{entity.properties[0].type.name}} NOT NULL,
-{% for property in entity.properties[1:2] %}
-  {{property.name}} {{property.type.name}},
-{% endfor %}
-  CONSTRAINT PK_{{entity.name}} PRIMARY KEY ({{entity.properties[0].name}})
-);
 
-{% for item in range(32) %}
-INSERT INTO {{entity.name}} VALUES ('{{item+1}}','Equipo {{item+1}}');
-{% endfor %}
